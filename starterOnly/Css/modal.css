@@ -302,6 +302,10 @@ input {
   height: 48px;
 }
 
+.formData {
+  margin: 5% 0% 5% 0%;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -539,6 +543,7 @@ input[data-error]::after {
 /* what i add  */
 
 
+
 .errorMsg {
   padding: 5px 0px 20px 0px;
   font-size: 1rem;
@@ -575,13 +580,20 @@ input:focus:valid {
 /* message when the form is submit */
 
 .itsValidate {
-
+  display: none;
   text-align: center;
   font-size: 1.8rem;
-  height: 50vh;
-  padding: 25vh 0vh 0vh 0vh;
-  display: flex;
+  height: 100vh;
+  padding: 10vh 0vh 0vh 0vh;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.itsValidate.active {
+  display: flex;
+}
+
+.formhidden.active {
+  display: none;
 }

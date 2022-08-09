@@ -53,8 +53,8 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form id="formInscription" name="reserve" action="index.html" method="get" onsubmit="return submitRegForm()"
-            novalidate>
+          <form id="formInscription" class="formhidden" name="reserve" action="index.html" method="get"
+            onsubmit="return submitRegForm()" novalidate>
             <div class="formData">
               <label id="first-name">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" placeholder="Younes" required="required"
@@ -141,12 +141,20 @@
             </div>
             <input class="btn-submit button" type="submit" value="C'est parti" />
           </form>
+          <div class="itsValidate">
+
+            <h1>Merci pour votre inscription</h1>
+            <div class="wrapper-btn">
+              <input type="button" value="Fermer" class="btn-submit button" onclick="window.location.reload(true)">
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <footer>
+  <footer class="footerOff">
     <p class="copyrights">
       Copyright 2014 - 2022, GameOn Inc.
     </p>

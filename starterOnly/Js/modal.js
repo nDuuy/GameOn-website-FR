@@ -15,6 +15,11 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closebtn = document.querySelector(".close");
 
+const FormHidden = document.querySelector(".formhidden");
+const heroSectionOff = document.querySelector(".hero-section")
+const footerOff = document.querySelector(".footerOff")
+const ok = document.querySelector(".itsValidate")
+
 
 
 var RegForm = document.getElementById("formInscription");
@@ -52,20 +57,8 @@ function submitRegForm() {
 		}
 	} else {
 
-
-
-		const Forme = document.getElementById("formInscription");
-		Forme.innerHTML =
-			`<div class="itsValidate">
-
-        <h1>Merci pour votre inscription</h1>
-
-         <div class="wrapper-btn">
-            <input type="submit" class="btn-submit button" value="Fermer" />
-         </div>
-  
-      </div>`;
-
+		ok.classList.add("active");
+		FormHidden.classList.add("active");
 	}
 
 
@@ -88,10 +81,14 @@ closebtn.addEventListener("click", closeModal);
 // ajout de classe active (displa:block)
 function launchModal() {
 	modalbg.classList.add("active");
+	heroSectionOff.classList.add("active");
+	footerOff.classList.add("active");
 }
 
 // Close modal form
 // suppression de classe active (plus visible)
 function closeModal() {
 	modalbg.classList.remove("active");
+	heroSectionOff.classList.remove("active");
+	footerOff.classList.remove("active");
 }
