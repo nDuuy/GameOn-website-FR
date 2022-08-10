@@ -543,6 +543,7 @@ input[data-error]::after {
 /* what i add  */
 
 
+/* this is our error msg  */
 
 .errorMsg {
   padding: 5px 0px 20px 0px;
@@ -552,30 +553,16 @@ input[data-error]::after {
 
 /* This is our style for the invalid fields */
 
-
-
-
 input:invalid {
   border-color: #900;
   background-color: #FDD;
 
 }
 
-
 input:focus:invalid {
   outline: none;
 
 }
-
-/* input:valid {
-  border-color: transparent;
-  background-color: #279e7a;
-}
-
-input:focus:valid {
-  outline: none;
-} */
-
 
 /* message when the form is submit */
 
@@ -593,6 +580,8 @@ input:focus:valid {
 .itsValidate.active {
   display: flex;
 }
+
+/* for hide the form on mobile and tab responsive  */
 
 .formhidden.active {
   display: none;
