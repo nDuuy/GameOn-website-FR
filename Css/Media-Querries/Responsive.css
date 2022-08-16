@@ -57,6 +57,7 @@
     background: #fff;
     color: #000;
     padding: 25px 0px 0px 0px !important;
+    min-width: 0px;
   }
 
   .hero-content::after {
@@ -97,6 +98,7 @@
     display: block;
     background-color: transparent;
     margin: 15vh auto;
+    height: 0%;
     position: absolute;
     overflow: visible;
   }

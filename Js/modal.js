@@ -1,14 +1,3 @@
-// function qui permet gérer le bouton de navigation en responsive
-function editNav() {
-	var x = document.getElementById("myTopnav");
-	if (x.className === "topnav") {
-		x.className += " responsive";
-	} else {
-		x.className = "topnav";
-	}
-}
-
-
 // DOM Elements
 
 const modalbg = document.querySelector(".bground");
@@ -20,10 +9,20 @@ const footerOff = document.querySelector(".footerOff");
 const itsOk = document.querySelector(".itsValidate");
 
 
-// ce qui nous permet de connecter avec le forme 
+// which allows us to connect with the form
 
 var RegForm = document.getElementById("formInscription");
 
+
+// function which allows to manage the responsive navigation button
+function editNav() {
+	var x = document.getElementById("myTopnav");
+	if (x.className === "topnav") {
+		x.className += " responsive";
+	} else {
+		x.className = "topnav";
+	}
+}
 
 // function for add or remove the error under the inputs 
 // and i use the setting elem for check the inputs
@@ -53,7 +52,6 @@ function checkInputValidity(elem) {
 	}
 
 }
-
 
 // function for check the validity of inputs fields 
 // that function is set up "onSubmit" on html 
@@ -88,6 +86,13 @@ function submitRegForm() {
 
 		// and hide the form with the class active who add the display none 
 		FormHidden.classList.add("active");
+
+		
+			// reset form
+			RegForm.reset();
+		
+			// clear form validation messages
+			clearValidationMessages();
 	}
 
 	// we block the form to submit data if the function is not ok
@@ -95,7 +100,22 @@ function submitRegForm() {
 
 }
 
+// clear all validation messages
 
+function clearValidationMessages()
+{
+	for(var i=0; i < RegForm.elements.length; i++)
+	{
+		var elem = RegForm.elements[i];
+		var error = elem.parentElement.getElementsByClassName("errorMsg")[0];
+		// if aria is fill 
+		elem.removeAttribute("aria-invalid");
+		// don't fill the span msg
+		error.innerHTML = "";
+		// remove the active class to span error 
+		error.classList.remove("active");
+	}
+}
 
 
 //////////////////////////////////// open close modal section//////////////////////////////
@@ -109,7 +129,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 closebtn.addEventListener("click", closeModal);
 
 // launch modal form
-// ajout de classe active
+// add of active class 
 
 // and hide the hero-section and footer on mobile an tab resolution for the responsive 
 
@@ -120,11 +140,22 @@ function launchModal() {
 }
 
 // Close modal form
-// suppression de classe active (plus visible)
+// removing of active class
 
 // and show the hero-section and footer on mobile an tab resolution when the modal is clossed for the responsive 
 
 function closeModal() {
+	modalbg.classList.remove("active");
+	heroSectionOff.classList.remove("active");
+	footerOff.classList.remove("active");
+}
+
+// Close validation msg and modal 
+// removing of active class
+
+function closeValidationMsg () {
+	itsOk.classList.remove("active");
+	FormHidden.classList.remove("active");
 	modalbg.classList.remove("active");
 	heroSectionOff.classList.remove("active");
 	footerOff.classList.remove("active");
